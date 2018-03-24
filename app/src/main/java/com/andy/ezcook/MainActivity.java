@@ -25,16 +25,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "1";
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerView.Adapter mAdapter;
     private FirebaseDatabase database;
     private SweetAlertDialog mProgress;
     private StorageReference mStorageRef;
     private DatabaseReference imagesRef;
     private PermissionManager permission;
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    private RecipeAdapter mAdapter;
+    private String TAG = "tag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,13 +75,76 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         permission.checkAndRequestPermissions(this);
-
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        /**
+         * DUMMY LIST
+         */
+        List<Recipe> recipes = new ArrayList<>();
+        recipes.add(new Recipe("hamburger",
+                "http://2wk128489wjq47m3kwxwe9hh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/burgers_main-bacon-cheeseburger-hamburger-stand.jpg",
+                "https://www.youtube.com/watch?v=vVvlgy37-cw",
+                "L","burger recipe"));
+
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        /**
+         * END DUMMY LIST
+         */
+
+        mAdapter = new RecipeAdapter(getApplicationContext(), recipes);
+
+        mAdapter.setOnItemClickListener(new RecipeAdapter.onItemClickListener() {
+            @Override
+            public void onItemClickListener(View view, int position, Recipe data) {
+                Intent i = new Intent(MainActivity.this, ViewRecipeActivity.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putString("name", data.getName());
+                mBundle.putString("imageURL", data.getImageUrl());
+                mBundle.putString("youtubeURL", data.getYoutubeURL());
+                mBundle.putString("category", data.getCategory());
+                mBundle.putString("recipe", data.getRecipe());
+                i.putExtras(mBundle);
+                startActivity(i);
+            }
+        });
+        mRecyclerView.setAdapter(mAdapter);
+
         updateImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
