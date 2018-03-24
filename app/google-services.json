@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "11729916840",
+    "firebase_url": "https://ezcook-7572d.firebaseio.com",
+    "project_id": "ezcook-7572d",
+    "storage_bucket": "ezcook-7572d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11729916840:android:4ea5ea0ec8d00b9b",
+        "android_client_info": {
+          "package_name": "com.andy.ezcook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11729916840-k2mhnrf2e655ve12t0ptrqiutos8jqcr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.andy.ezcook",
+            "certificate_hash": "923f782bde67b6e90ce594e96aefaa8898e7ce93"
+          }
+        },
+        {
+          "client_id": "11729916840-ec1i5sq22bmsqmtc5558eheso7o91hqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9z6OOb2auY25NLSQqJ8NFdF88Cazobec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11729916840-ec1i5sq22bmsqmtc5558eheso7o91hqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
