@@ -55,7 +55,10 @@ public class ViewRecipeActivity extends YouTubeBaseActivity {
         };
 
         youTubePlayerView.initialize("AIzaSyAMef8Y67MeCi0ZAV7ZNlQ7R4FH0bzegbQ", onInitializedListener);
+    }
 
-
+    @Override
+    public void onBackPressed() {
+        this.finish();
     }
 }

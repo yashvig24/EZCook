@@ -46,7 +46,34 @@ public class MainActivity extends AppCompatActivity {
                 "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
                 "https://www.youtube.com/watch?v=6ajFGHWsDl0",
                 "D", "salmon recipe"));
-
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
         /**
          * END DUMMY LIST
          */
