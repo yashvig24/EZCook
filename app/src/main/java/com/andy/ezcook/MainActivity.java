@@ -56,13 +56,15 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new RecipeAdapter.onItemClickListener() {
             @Override
             public void onItemClickListener(View view, int position, Recipe data) {
-                Intent i = new Intent(MainActivity.this, Recipe.class);
+                Intent i = new Intent(MainActivity.this, ViewRecipeActivity.class);
                 Bundle mBundle = new Bundle();
                 mBundle.putString("name", data.getName());
-                mBundle.putString("imageurl", data.getImageUrl());
-                mBundle.putString("youtubeurl", data.getYoutubeURL());
+                mBundle.putString("imageURL", data.getImageUrl());
+                mBundle.putString("youtubeURL", data.getYoutubeURL());
                 mBundle.putString("category", data.getCategory());
                 mBundle.putString("recipe", data.getRecipe());
+                i.putExtras(mBundle);
+                startActivity(i);
             }
         });
         mRecyclerView.setAdapter(mAdapter);
