@@ -9,10 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerView.Adapter mAdapter;
+    private RecipeAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button updateImageButton = findViewById(R.id.updateImageButton);
-        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
 
         mRecyclerView = findViewById(R.id.recyclerView);
 
@@ -29,6 +32,40 @@ public class MainActivity extends AppCompatActivity {
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        /**
+         * DUMMY LIST
+         */
+        List<Recipe> recipes = new ArrayList<>();
+        recipes.add(new Recipe("hamburger",
+                "http://2wk128489wjq47m3kwxwe9hh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/burgers_main-bacon-cheeseburger-hamburger-stand.jpg",
+                "https://www.youtube.com/watch?v=vVvlgy37-cw",
+                "L","burger recipe"));
+
+        recipes.add(new Recipe("salmon",
+                "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
+                "https://www.youtube.com/watch?v=6ajFGHWsDl0",
+                "D", "salmon recipe"));
+
+        /**
+         * END DUMMY LIST
+         */
+
+        mAdapter = new RecipeAdapter(getApplicationContext(), recipes);
+
+        mAdapter.setOnItemClickListener(new RecipeAdapter.onItemClickListener() {
+            @Override
+            public void onItemClickListener(View view, int position, Recipe data) {
+                Intent i = new Intent(MainActivity.this, Recipe.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putString("name", data.getName());
+                mBundle.putString("imageurl", data.getImageUrl());
+                mBundle.putString("youtubeurl", data.getYoutubeURL());
+                mBundle.putString("category", data.getCategory());
+                mBundle.putString("recipe", data.getRecipe());
+            }
+        });
+        mRecyclerView.setAdapter(mAdapter);
 
         updateImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
