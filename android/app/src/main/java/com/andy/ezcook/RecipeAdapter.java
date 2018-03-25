@@ -41,8 +41,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             imageView = itemView.findViewById(R.id.recipeItemImageView);
             recipeTextView = itemView.findViewById(R.id.recipeItemTextView);
 
-            imageView.setAlpha(0.65f);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

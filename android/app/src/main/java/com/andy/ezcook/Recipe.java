@@ -8,12 +8,14 @@ public class Recipe {
     private String name;
     private String imageUrl;
     private String youtubeURL;
+    private String category;
     private String recipe;
 
-    public Recipe(String name, String imageUrl, String youtubeURL,String recipe) {
+    public Recipe(String name, String imageUrl, String youtubeURL, String category, String recipe) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.youtubeURL = youtubeURL;
+        this.category = category;
         this.recipe = recipe;
     }
 
@@ -23,6 +25,14 @@ public class Recipe {
 
     public void setYoutubeURL(String youtubeURL) {
         this.youtubeURL = youtubeURL;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getName() {
