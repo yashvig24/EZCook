@@ -19,16 +19,16 @@ public class PlaceOrderRequest {
     @SerializedName("CustomerOrder")
     @Expose
     private CustomerOrder customerOrder;
-    @SerializedName("Details")
-    @Expose
-    private List<Detail> details;
+//    @SerializedName("Details")
+//    @Expose
+//    private List<Detail> details;
 
     public PlaceOrderRequest(List<Detail> details, OrderType orderType, CustomerID customerID, Description description, CustomerOrder customerOrder) {
         this.orderType = orderType;
         this.customerID = customerID;
         this.description = description;
         this.customerOrder = customerOrder;
-        this.details = details;
+        //this.details = details;
     }
 
     public OrderType getOrderType() {
@@ -63,12 +63,12 @@ public class PlaceOrderRequest {
         this.customerOrder = customerOrder;
     }
 
-    public List<Detail> getDetails() {
-        return details;
-    }
-
-    public void setDetails(List<Detail> details) {
-        this.details = details;
-    }
+//    public List<Detail> getDetails() {
+//        return details;
+//    }
+//
+//    public void setDetails(List<Detail> details) {
+//        this.details = details;
+//    }
 
 }

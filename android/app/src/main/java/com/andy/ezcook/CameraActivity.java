@@ -139,6 +139,8 @@ public class CameraActivity extends AppCompatActivity {
                                 .setTitleText("Upload Successful!")
                                 .setContentText("Resume successfully sent to hiring managers!")
                                 .show();
+
+                        setResult(59);
                     }
                 });
     }

@@ -74,16 +74,17 @@ public class ViewRecipeActivity extends YouTubeBaseActivity {
                 httpRequest.login(new LoginModel("admin", "Goodbye", "")).enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        String CustomerID = "ABARTENDE";
+                        String CustomerID = "ARTCAGES";
                         String MISSINGINGREDIENTS = "LETTUCE";
+                        int orderQty = 2;
 
                         OrderType orderType = new OrderType("SO");
                         CustomerID customerID = new CustomerID(CustomerID);
-                        Description description = new Description("Ordering " + MISSINGINGREDIENTS + " FOR " + CustomerID);
+                        Description description = new Description("Ordering " + orderQty + " " + MISSINGINGREDIENTS + " FOR " + CustomerID);
                         CustomerOrder customerOrder = new CustomerOrder("SO180-009-28");
                         List<Detail> details = new ArrayList<>();
 
-                        details.add(new Detail(new InventoryID("LETTUCE"), new OrderQty(2), new UOM("EA")));
+                        details.add(new Detail(new InventoryID("LETTUCE"), new OrderQty(orderQty), new UOM("EA")));
 
                         httpRequest.placeOrder(new PlaceOrderRequest(details, orderType, customerID, description, customerOrder)).enqueue(new Callback<PlaceOrderResponse>() {
                             @Override
