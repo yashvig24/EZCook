@@ -88,40 +88,39 @@ public class MainActivity extends AppCompatActivity {
         List<Recipe> recipes = new ArrayList<>();
         recipes.add(new Recipe("hamburger",
                 "http://2wk128489wjq47m3kwxwe9hh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/burgers_main-bacon-cheeseburger-hamburger-stand.jpg",
-                "vVvlgy37-cw",
-                "L","burger recipe"));
+                "vVvlgy37-cw","burger recipe"));
 
         recipes.add(new Recipe("salmon",
                 "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
                 "6ajFGHWsDl0",
-                "D", "salmon recipe"));
+                 "salmon recipe"));
         recipes.add(new Recipe("hamburger",
                 "http://2wk128489wjq47m3kwxwe9hh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/burgers_main-bacon-cheeseburger-hamburger-stand.jpg",
                 "vVvlgy37-cw",
-                "L","burger recipe"));
+                "burger recipe"));
 
         recipes.add(new Recipe("salmon",
                 "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
                 "6ajFGHWsDl0",
-                "D", "salmon recipe"));
+                "salmon recipe"));
         recipes.add(new Recipe("hamburger",
                 "http://2wk128489wjq47m3kwxwe9hh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/burgers_main-bacon-cheeseburger-hamburger-stand.jpg",
                 "vVvlgy37-cw",
-                "L","burger recipe"));
+                "burger recipe"));
 
         recipes.add(new Recipe("salmon",
                 "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
                 "6ajFGHWsDl0",
-                "D", "salmon recipe"));
+                "salmon recipe"));
         recipes.add(new Recipe("hamburger",
                 "http://2wk128489wjq47m3kwxwe9hh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/burgers_main-bacon-cheeseburger-hamburger-stand.jpg",
                 "vVvlgy37-cw",
-                "L","burger recipe"));
+                "burger recipe"));
 
         recipes.add(new Recipe("salmon",
                 "https://www.seriouseats.com/recipes/images/2016/08/20160826-sous-vide-salmon-46-1500x1125.jpg",
                 "6ajFGHWsDl0",
-                "D", "salmon recipe"));
+                "salmon recipe"));
         /**
          * END DUMMY LIST
          */
@@ -136,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
                 mBundle.putString("name", data.getName());
                 mBundle.putString("imageURL", data.getImageUrl());
                 mBundle.putString("youtubeURL", data.getYoutubeURL());
-                mBundle.putString("category", data.getCategory());
                 mBundle.putString("recipe", data.getRecipe());
                 i.putExtras(mBundle);
                 startActivity(i);
