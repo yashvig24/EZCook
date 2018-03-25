@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/rounded_corner"
     >
 
     <ImageView
@@ -21,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
+        android:layout_marginTop="100dp"
+        android:textColor="?android:attr/colorForeground"
+        android:textSize="30sp" />
 
 </RelativeLayout>
