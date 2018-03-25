@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference imagesRef = database.getReference("images"); // ref for where we store images
 
-        DatabaseReference recipesRef = database.getReference("recipes");
+        DatabaseReference recipesRef = database.getReference("recipes/");
 
         recipesRef.addValueEventListener(new ValueEventListener() {
             @Override
