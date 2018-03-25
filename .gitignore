@@ -1,3 +1,4 @@
+/backend/env_vars.py
 /android/*.iml
 /android/*.gradle
 /android/local.properties
